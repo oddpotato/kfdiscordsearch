@@ -2,7 +2,7 @@
     <v-container align-self="center">
     <div v-if="GET_NO_RESULTS">
         <v-row justify="center">
-        <h1>NO RESULTS FOUND</h1>
+        <h1 class="text-center white--text">NO RESULTS FOUND</h1>
     </v-row>
     </div>
     <div v-else>
