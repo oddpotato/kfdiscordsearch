@@ -150,42 +150,16 @@ export default {
   border-color: #f5f5f5;
 }
 
-/* .text-field-style  >>> .v-text-field__slot input {
- color: purple
-} */
-
-/* .text-field-style  >>> .v-text-field__hint {
- color:white 
-} */
-
 .checkbox-style  >>> .v-label {
   color: white
 }
 
 .text-field-style  >>> .v-text-field__slot input {
- color:white 
+ color:#535754
 }
 
-/* .browsesubwikicard {
-  border: 1px;
-  border-style: solid;
-  border-color: #f5f5f5;
+.text-field-style  >>> .v-messages__message {
+    color: white;
 }
-
-.browsesubwikitop {
-  border-bottom: 2px solid #f5f5f5;
-}
-
-.browsesubwikibottom {
-  border-top: 2px solid #f5f5f5;
-}
-
-.browsesubwikitop .v-card__title {
-  word-break: normal;
-  display: block;
-  text-align: center;
-  line-height: 1.5;
-} */
-
 
 </style>
