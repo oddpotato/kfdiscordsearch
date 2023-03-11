@@ -17,7 +17,7 @@
   <div v-if="GET_IS_SEARCHING">
         <v-progress-linear
           indeterminate
-          color="green darken-2"
+          color="grey lighten-4"
         ></v-progress-linear>
       </div>
     </div>
