@@ -1,19 +1,31 @@
 <template>
-<v-container align-self="center">
+<v-container align-self="center" style="background-color: #191a1a">
+  <!-- <div> -->
     <v-row justify="center">
-    <v-col cols="12" lg="6" md="8" sm="6" justify="center">
-    <v-card>
-        <v-card-subtitle>Please separate search terms by comma</v-card-subtitle>
-    <v-form ref="searchform" justify="center" v-on:submit.prevent="search()">
-        <v-text-field v-model="searchTerms" 
+      <v-col cols="12" lg="6" md="8" sm="6">
+    <v-img src="@/assets/JFNSMheader.png" cover /> 
+  <!-- </v-img> -->
+    </v-col>
+  </v-row>
+  <v-row justify="center">
+      <v-col cols="12" lg="6" md="8" sm="6">
+        <p class="text-center white--text">Enter Search Terms</p>
+      <v-form class="searchform" ref="searchform" justify="center" v-on:submit.prevent="search()">
+        <v-text-field v-model="searchTerms"
         required
         @blur="termsexist()"
-        label="Enter Search Terms"
+        class="text-field-style"
+        
+        background-color="#a6a4a4"
+        clearable
+        hint="Please separate search terms by comma"
         @keyup.enter="submit"></v-text-field>
-<v-row>
-    <div v-for="(field, index) in GET_AVAILABLE_SEARCH_FIELDS" :key="index">
-  <v-col>
+        <v-row>
+    <div v-for="(field, index) in GET_AVAILABLE_SEARCH_FIELDS" :key="index" class="pl-6">
+  <v-col justify="center">
     <v-checkbox
+    color="white"
+    class="checkbox-style"
       v-model="fieldGetAndSet"
       :value="field"
       :label="fieldname(field)"
@@ -21,10 +33,13 @@
     </v-col>
     </div>
 </v-row>
+<div class="pb-4 pl-6">
+<v-btn @click="search()">Search</v-btn>
+</div>
     </v-form>
-    <v-row>
+    <v-row justify="center">
         <v-col>
-    <div class="displayErrors" v-if="errors.length" style="color: #c21a0e">
+    <div class="displayErrors" v-if="errors.length" style="color: white">
       <ul>
         <li v-for="(error, index) in errors" :key="index">
           {{ error }}
@@ -36,14 +51,8 @@
     </div>
 </v-col>
     </v-row>
-    <v-row>
-    <v-col justify="right">
-    <v-btn @click="search()">Search</v-btn>
-</v-col>
-    </v-row>
-    </v-card>
     </v-col>
-</v-row>
+  </v-row>
 </v-container>
 </template>
 
@@ -135,6 +144,28 @@ export default {
 </script>
 
 <style scoped>
+.searchform { 
+  border: 1px;
+  border-style: solid;
+  border-color: #f5f5f5;
+}
+
+/* .text-field-style  >>> .v-text-field__slot input {
+ color: purple
+} */
+
+/* .text-field-style  >>> .v-text-field__hint {
+ color:white 
+} */
+
+.checkbox-style  >>> .v-label {
+  color: white
+}
+
+.text-field-style  >>> .v-text-field__slot input {
+ color:white 
+}
+
 /* .browsesubwikicard {
   border: 1px;
   border-style: solid;
@@ -155,5 +186,6 @@ export default {
   text-align: center;
   line-height: 1.5;
 } */
+
 
 </style>
