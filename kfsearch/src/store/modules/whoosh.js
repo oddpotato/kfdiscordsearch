@@ -15,15 +15,17 @@ export default {
             state.isSearching = true
             state.noResults = false
             state.searchResults = {}
-            console.log(state.searchResults)
-            console.log("THESE ARE OUR SEARCH RESULTS")
+            // console.log(state.searchResults)
+            // console.log("THESE ARE OUR SEARCH RESULTS")
                 let dataforcall = {
                     "fields": state.selectedSearchFields,
                     "queries": state.searchTerms
                 }
+                console.log(dataforcall)
                 axios
                 .post("https://62fm88kr45.execute-api.us-east-1.amazonaws.com/prod/standardquery", dataforcall).then(res => {
                     console.log(res.data.body)
+                    console.log("Here's the response body")
                         if(Object.keys(res.data.body).length > 2){
                             commit("SET_SEARCH_RESULTS", res.data.body)
                     }
